@@ -385,10 +385,8 @@ a {
 }
 
 .research-card {
-  min-height: 460px;
-  position: relative;
+  min-width: 0;
   overflow: hidden;
-  padding: 45px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   transition: background-color 220ms ease;
@@ -399,19 +397,72 @@ a {
 }
 
 .card-number {
+  display: block;
+  padding: 20px 28px;
   color: #71879a;
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px;
 }
 
+.research-visual {
+  display: block;
+  position: relative;
+  aspect-ratio: 1.5;
+  overflow: hidden;
+  background: #edf1ec;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.research-visual::after {
+  content: "View full figure ↗";
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 9px 12px;
+  color: #071711;
+  background: rgba(85, 217, 139, 0.95);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.research-visual:hover::after,
+.research-visual:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.research-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.research-visual:hover img,
+.research-visual:focus-visible img {
+  transform: scale(1.012);
+}
+
+.research-card-copy {
+  min-height: 260px;
+  padding: 34px 38px 38px;
+}
+
 .research-card h3 {
   max-width: 420px;
-  margin: 135px 0 18px;
+  margin: 0 0 18px;
   font-size: 35px;
   letter-spacing: -0.035em;
 }
 
-.research-card > p {
+.research-card-copy > p {
   max-width: 520px;
   margin: 0;
   color: #9fb0be;
@@ -435,41 +486,6 @@ a {
   font-size: 11px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-}
-
-.card-orbit {
-  position: absolute;
-  width: 190px;
-  height: 86px;
-  top: 60px;
-  right: 45px;
-  border: 1px solid rgba(85, 217, 139, 0.25);
-  border-radius: 50%;
-  transform: rotate(-14deg);
-}
-
-.card-orbit::before,
-.card-orbit::after {
-  content: "";
-  position: absolute;
-  inset: 14px 34px;
-  border: 1px solid rgba(74, 159, 232, 0.2);
-  border-radius: 50%;
-}
-
-.card-orbit::after {
-  inset: 30px 74px;
-}
-
-.card-orbit span {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  top: 10px;
-  right: 35px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 20px var(--green);
 }
 
 .scale-section {
@@ -1011,7 +1027,7 @@ a {
   .desktop-nav { gap: 25px; }
   .hero-copy { width: 56%; }
   .hero-image { left: 34%; opacity: 0.7; }
-  .research-card { padding: 34px; }
+  .research-card-copy { padding: 30px; }
   .publication-list article { grid-template-columns: 45px minmax(0, 1fr) 125px 28px; gap: 20px; }
 }
 
@@ -1056,7 +1072,7 @@ a {
   .recognition { grid-template-columns: 1fr; gap: 54px; }
   .co-pi-grid { grid-template-columns: 1fr; }
   .research-grid { grid-template-columns: 1fr; }
-  .research-card { min-height: 410px; }
+  .research-card-copy { min-height: 230px; }
   .scale-grid { grid-template-columns: 1fr; gap: 32px; }
   .scale-grid ol { grid-template-columns: repeat(5, minmax(90px, 1fr)); overflow-x: auto; padding-bottom: 8px; }
   .publication-list article { grid-template-columns: 40px minmax(0, 1fr) 34px; padding-block: 26px; }
@@ -1086,9 +1102,9 @@ a {
   .join h2,
   .recognition h2 { font-size: 39px; }
   .coordinate { display: none; }
-  .research-card { min-height: 440px; padding: 28px; }
-  .card-orbit { right: 22px; top: 62px; transform: scale(0.78) rotate(-14deg); transform-origin: right top; }
-  .research-card h3 { margin-top: 145px; font-size: 31px; }
+  .research-card-copy { min-height: 0; padding: 26px; }
+  .research-card h3 { margin-top: 0; font-size: 31px; }
+  .research-visual::after { opacity: 1; transform: none; }
   .scale-grid ol { grid-template-columns: repeat(5, 105px); }
   .publication-list article { grid-template-columns: 30px minmax(0, 1fr) 34px; gap: 12px; }
   .publication-list h3 { font-size: 21px; }
