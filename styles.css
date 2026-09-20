@@ -1095,7 +1095,8 @@ a {
   border-top: 1px solid #afbbb4;
 }
 
-.recognition-list div {
+.recognition-list > div,
+.recognition-list > article {
   display: grid;
   grid-template-columns: 75px 1fr 0.7fr;
   gap: 24px;
@@ -1103,15 +1104,92 @@ a {
   border-bottom: 1px solid #bdc7c1;
 }
 
-.recognition-list span,
-.recognition-list p {
+.recognition-list > div span,
+.recognition-list > div p {
   margin: 0;
   color: #6e7f76;
   font-size: 12px;
 }
 
-.recognition-list strong {
+.recognition-list > div strong {
   font-size: 14px;
+}
+
+.recognition-award {
+  grid-template-columns: 75px minmax(0, 1fr) 112px !important;
+  align-items: center;
+  padding-block: 28px !important;
+}
+
+.recognition-year {
+  align-self: start;
+  color: #258553;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.recognition-award-copy {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.recognition-award-copy strong {
+  color: #183328;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.recognition-award-copy p,
+.recognition-award-copy small {
+  margin: 0;
+  color: #5f7469;
+  line-height: 1.55;
+}
+
+.recognition-award-copy p {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.recognition-award-copy small {
+  max-width: 540px;
+  font-size: 12px;
+}
+
+.recognition-award-copy > a {
+  width: fit-content;
+  margin-top: 4px;
+  color: #16794a;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.recognition-award-copy > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.recognition-certificate {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #aebcb4;
+  box-shadow: 0 9px 20px rgba(24, 51, 40, 0.1);
+}
+
+.recognition-certificate img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 260ms ease;
+}
+
+.recognition-certificate:hover img,
+.recognition-certificate:focus-visible img {
+  transform: scale(1.025);
 }
 
 .footer {
@@ -1280,8 +1358,12 @@ a {
   .student-card { grid-template-columns: 1fr; }
   .student-photo { aspect-ratio: 1.15; }
   .student-card-body { min-height: 210px; padding: 26px; }
-  .recognition-list div { grid-template-columns: 55px 1fr; }
-  .recognition-list p { grid-column: 2; }
+  .recognition-list > div { grid-template-columns: 55px 1fr; }
+  .recognition-list > div p { grid-column: 2; }
+  .recognition-award { grid-template-columns: 55px minmax(0, 1fr) !important; }
+  .recognition-award-copy,
+  .recognition-certificate { grid-column: 2; }
+  .recognition-certificate { width: 96px; margin-top: 6px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { gap: 24px; }
 }
