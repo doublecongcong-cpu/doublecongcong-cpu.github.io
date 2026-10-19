@@ -733,11 +733,12 @@ a {
   line-height: 1.72;
 }
 
-.co-pi-grid {
+.pi-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 28px;
   margin-top: 76px;
+  max-width: 600px;
 }
 
 .pi-card {
@@ -768,10 +769,6 @@ a {
 
 .photo-congcong {
   object-position: 50% 18%;
-}
-
-.photo-ying {
-  object-position: 50% 34%;
 }
 
 .pi-card-body {
@@ -1294,7 +1291,7 @@ a {
   .people-heading,
   .join-grid,
   .recognition { grid-template-columns: 1fr; gap: 54px; }
-  .co-pi-grid { grid-template-columns: 1fr; }
+  .pi-grid { grid-template-columns: 1fr; }
   .research-grid { grid-template-columns: 1fr; }
   .research-card-copy { min-height: 230px; }
   .scale-grid { grid-template-columns: 1fr; gap: 32px; }
