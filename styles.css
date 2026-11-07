@@ -183,6 +183,81 @@ a {
   line-height: 1.55;
 }
 
+.publication-celebration {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border: 1px solid rgba(85, 217, 139, 0.38);
+  border-left: 3px solid var(--green);
+  border-radius: 2px;
+  background: linear-gradient(115deg, rgba(25, 72, 54, 0.65), rgba(7, 23, 30, 0.94));
+}
+
+.celebration-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.celebration-dot {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(85, 217, 139, 0.45);
+}
+
+.publication-celebration h2 {
+  margin: 0;
+  color: #f1fff5;
+  font-size: clamp(23px, 2.1vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.celebration-message {
+  margin: 10px 0 0;
+  color: #d1e4d9;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.celebration-translation {
+  margin: 9px 0 0;
+  color: #a9c5b9;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.celebration-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 36px;
+  margin-top: 8px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.celebration-link:hover {
+  color: #baffd0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.celebration-link:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 5px;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
